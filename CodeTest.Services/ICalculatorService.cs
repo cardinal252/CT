@@ -2,6 +2,7 @@
 {
     /// <summary>
     /// The calculator service
+    /// Strictly, this class doesn't need an interface as its unlikely to be unplugged, but it makes for easier mocking for testing controllers etc
     /// </summary>
     public interface ICalculatorService
     {

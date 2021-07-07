@@ -3,8 +3,15 @@ using NUnit.Framework;
 
 namespace CodeTest.Services.Tests
 {
-    public class Tests
+    /// <summary>
+    /// The calculator service tests
+    /// </summary>
+    public class CalculatorServiceTests
     {
+        // I chose nunit for ease of use and tooling availability, could use any though
+        // for this test, there is no external integration, but if there were I would use the repository pattern
+        // which would allow for better mocking
+
         private ICalculatorService service;
 
         /// <summary>

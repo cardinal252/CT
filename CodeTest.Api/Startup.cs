@@ -20,6 +20,7 @@ namespace CodeTest.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // di the service in
             services.AddScoped<ICalculatorService, CalculatorService>();
         }
 
