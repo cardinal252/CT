@@ -14,7 +14,25 @@ namespace CodeTest.Services
         /// <returns>The output</returns>
         public string Calculate(int input)
         {
-            throw new NotImplementedException();
+            bool divisibleBy9 = input % 9 == 0;
+            bool divisibleBy7 = input % 7 == 0;
+            if (divisibleBy7 && divisibleBy9)
+            {
+                return "EG";
+            }
+
+            if (divisibleBy7)
+            {
+                return "E";
+            }
+
+            if (divisibleBy9)
+            {
+                return "G";
+            }
+
+            return input.ToString();
+
         }
     }
 }
