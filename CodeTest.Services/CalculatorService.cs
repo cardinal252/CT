@@ -12,26 +12,26 @@ namespace CodeTest.Services
         /// </summary>
         /// <param name="input">The input</param>
         /// <returns>The output</returns>
-        public string Calculate(int input)
+        public CalculatorResult Calculate(int input)
         {
             bool divisibleBy9 = input % 9 == 0;
             bool divisibleBy7 = input % 7 == 0;
             if (divisibleBy7 && divisibleBy9)
             {
-                return "EG";
+                return new CalculatorResult("EG");
             }
 
             if (divisibleBy7)
             {
-                return "E";
+                return new CalculatorResult("E");
             }
 
             if (divisibleBy9)
             {
-                return "G";
+                return new CalculatorResult("G");
             }
 
-            return input.ToString();
+            return new CalculatorResult(input.ToString());
 
         }
     }

@@ -26,10 +26,10 @@ namespace CodeTest.Services.Tests
             const string expected = "E";
 
             // Act
-            string result = service.Calculate(14);
+            CalculatorResult calculatorResult = service.Calculate(14);
 
             // Assert
-            result.Should().Be(expected);
+            calculatorResult.Result.Should().Be(expected);
         }
 
         /// <summary>
@@ -42,10 +42,10 @@ namespace CodeTest.Services.Tests
             const string expected = "E";
 
             // Act
-            string result = service.Calculate(14);
+            CalculatorResult calculatorResult = service.Calculate(14);
 
             // Assert
-            result.Should().Be(expected);
+            calculatorResult.Result.Should().Be(expected);
         }
 
         /// <summary>
@@ -58,10 +58,10 @@ namespace CodeTest.Services.Tests
             const string expected = "EG";
 
             // Act
-            string result = service.Calculate(63);
+            CalculatorResult calculatorResult = service.Calculate(63);
 
             // Assert
-            result.Should().Be(expected);
+            calculatorResult.Result.Should().Be(expected);
         }
 
         /// <summary>
@@ -74,10 +74,10 @@ namespace CodeTest.Services.Tests
             const string expected = "5";
 
             // Act
-            string result = service.Calculate(5);
+            CalculatorResult calculatorResult = service.Calculate(5);
 
             // Assert
-            result.Should().Be(expected);
+            calculatorResult.Result.Should().Be(expected);
         }
     }
 }

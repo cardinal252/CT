@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="input">The input</param>
         /// <returns>The output</returns>
-        string Calculate(int input);
+        CalculatorResult Calculate(int input);
     }
 }

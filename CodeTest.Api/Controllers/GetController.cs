@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using CodeTest.Services;
 
 namespace CodeTest.Api.Controllers
 {
+    [ExcludeFromCodeCoverage] // Whilst this is unit testable, it only acts as a wrapper to hand off to the service
     [ApiController]
     public sealed class GetController : ControllerBase
     {
@@ -26,18 +28,17 @@ namespace CodeTest.Api.Controllers
 
         [Route("/get/{input}")]
         [HttpGet]
-        public string Index(int input)
+        public ActionResult Index(int input)
         {
             try
             {
-                return calculatorService.Calculate(input);
+                return Ok(calculatorService.Calculate(input));
             }
             catch (Exception ex)
             {
-                // todo: figure out something better to do with this
                 // hand off for logging
                 logger.LogError(ex, "An error occurred");
-                throw;
+                return StatusCode(500);
             }
         }
     }
