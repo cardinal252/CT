@@ -24,7 +24,7 @@ namespace CodeTest.Services.Tests
         }
 
         /// <summary>
-        /// Tests getting 
+        /// Tests getting a value that is strictly a multiple of 7
         /// </summary>
         [Test]
         public void Calculate_MultipleOf7Only()
@@ -40,7 +40,7 @@ namespace CodeTest.Services.Tests
         }
 
         /// <summary>
-        /// Tests getting 
+        /// Tests getting a value that is strictly a multiple of 9 
         /// </summary>
         [Test]
         public void Calculate_MultipleOf9Only()
@@ -56,7 +56,7 @@ namespace CodeTest.Services.Tests
         }
 
         /// <summary>
-        /// Tests getting 
+        /// Tests getting a value that is a multiple of 7 or 9
         /// </summary>
         [Test]
         public void Calculate_MultipleOf7And9()
@@ -72,7 +72,7 @@ namespace CodeTest.Services.Tests
         }
 
         /// <summary>
-        /// Tests getting 
+        /// Tests getting a value that is a multiple of neither 
         /// </summary>
         [Test]
         public void Calculate_MultipleOfNeither()
@@ -82,6 +82,38 @@ namespace CodeTest.Services.Tests
 
             // Act
             CalculatorResult calculatorResult = service.Calculate(5);
+
+            // Assert
+            calculatorResult.Result.Should().Be(expected);
+        }
+
+        /// <summary>
+        /// Tests getting a value with an input of zero
+        /// </summary>
+        [Test]
+        public void Calculate_Zero()
+        {
+            // Arrange
+            const string expected = "0";
+
+            // Act
+            CalculatorResult calculatorResult = service.Calculate(0);
+
+            // Assert
+            calculatorResult.Result.Should().Be(expected);
+        }
+
+        /// <summary>
+        /// Tests getting a value with an input of a negative
+        /// </summary>
+        [Test]
+        public void Calculate_Negative()
+        {
+            // Arrange
+            const string expected = "E";
+
+            // Act
+            CalculatorResult calculatorResult = service.Calculate(-14);
 
             // Assert
             calculatorResult.Result.Should().Be(expected);
